@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Service from "../shared/Service";
 import About from "../shared/About";
-import {TfiMenu} from "react-icons/tfi";
+import { TfiMenu } from "react-icons/tfi";
 import { AnimatePresence, motion } from "framer-motion";
 import Hamburger from "./Hamburger";
 import PrimaryButton from "../shared/PrimaryButton";
+import Logo from "../shared/Logo";
 
 
 export default function Navbar() {
@@ -22,34 +23,30 @@ export default function Navbar() {
       onMouseLeave={handleMouseLeave}
     >
       <div className="flex justify-between items-center">
-        <Link to={"/"} className="flex items-center space-x-2">
-          <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-blue-500 rounded-sm"></div>
-          <span className="font-semibold text-xl text-white">Betaflux</span>
-        </Link>
-
+        <Logo />
         <div className="hidden md:flex space-x-8 text-sm font-medium">
           <div
             onMouseEnter={() => handleMouseEnter("services")}
-            className="hover:text-white cursor-pointer relative"
+            className="hover:text-accent cursor-pointer relative"
           >
             Services
           </div>
           <div
             onMouseEnter={() => handleMouseEnter("about")}
-            className="hover:text-white"
+            className="hover:text-accent"
           >
             About
           </div>
           <Link
             onMouseEnter={() => handleMouseEnter("contact")}
             to="/contact-us"
-            className="hover:text-white"
+            className="hover:text-accent"
           >
             Contact Us
           </Link>
         </div>
         <div className="md:flex hidden">
-          <PrimaryButton method={() => navigate("/contact-us")}  name={"Request a consultation"} />
+          <PrimaryButton method={() => navigate("/contact-us")} name={"Request a consultation"} />
         </div>
         <div className="md:hidden">
           <button

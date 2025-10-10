@@ -7,6 +7,7 @@ import { serviceData } from "../assets/serviceData";
 import { useParams } from "react-router-dom";
 import { IoIosArrowUp } from "react-icons/io";
 import ClientSection from "../components/ClientSection";
+import Title from "../shared/Title";
 
 export default function ServicesPage() {
     const { pathId } = useParams();
@@ -20,14 +21,12 @@ export default function ServicesPage() {
 
     return (
         <div>
-            <div className="border-b border-gray-700">
+            <div className="border-b border-secondary">
                 <section className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto px-6 md:px-10 py-20">
                     <div>
-                        <p className="text-[12px] uppercase bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent font-bold mb-3">
-                            {data?.subHeading}
-                        </p>
-                        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-white mb-6"
-                            dangerouslySetInnerHTML={{ __html: data?.Heading }}>
+                        <Title name={data?.subHeading} />
+                        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-accent mb-6">
+                            {data?.Heading}
                         </h1>
                         <p className="text-gray-400 mb-8">
                             {data.headingParagraph}
@@ -45,16 +44,14 @@ export default function ServicesPage() {
                 </section>
             </div>
 
-            <div className="border-b border-gray-700">
+            <div className="border-b border-secondary">
                 <section className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto px-6 md:px-10 py-20">
                     <div className="text-left w-[80%]">
-                        <p className="text-[12px] uppercase bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent font-bold mb-3">
-                            {data.workSubHeading}
-                        </p>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                        <Title name={data.workSubHeading} />
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-accent">
                             {data.workHeading}
                         </h2>
-                        <p className="text-gray-400 mb-8">
+                        <p className="text-primary mb-8">
                             {data.workParagraph}
                         </p>
                         <motion.div
@@ -62,7 +59,7 @@ export default function ServicesPage() {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                         >
-                            <FaRocket className="text-[200px] md:text-[300px] text-pink-500" />
+                            <FaRocket className="text-[200px] md:text-[300px] text-accent" />
                         </motion.div>
                     </div>
                     <div className="space-y-8">
@@ -81,21 +78,16 @@ export default function ServicesPage() {
                 </section>
             </div>
 
-            <div className="border-b border-gray-700">
+            <div className="border-b border-secondary">
                 <section className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6 md:px-10 py-20">
                     <div className="md:w-[80%]">
-                        <p className="text-[12px] uppercase bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent font-bold mb-3">
-                            {data.finalSubHeading}
-                        </p>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight"
-                            dangerouslySetInnerHTML={{ __html: data.finalHeading }}>
+                        <Title name={data.finalSubHeading} />
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-accent mb-6 leading-tight">
+                            {data.finalHeading}
                         </h2>
-                        <p className="text-gray-400 mb-8">
+                        <p className="text-primary mb-8">
                             {data.finalParagraph}
                         </p>
-                        <img className="max-w-[300px] max-h-[400px] md:max-w-[350px] md:max-h-[600px]"
-                            src={data.finalImage}
-                        />
                     </div>
                     <div className="space-y-10">
                         <div className="grid md:grid-cols-2 gap-4">
@@ -120,17 +112,15 @@ export default function ServicesPage() {
                 </section>
             </div>
 
-            <div className="border-b border-gray-700">
+            <div className="border-b border-secondary">
                 <CloudServices />
             </div>
 
-            <div className="border-b border-gray-700">
+            <div className="border-b border-secondary">
                 <section className="flex items-start md:flex-row flex-col gap-20 max-w-6xl mx-auto px-6 md:px-10 py-20">
                     <div className="md:-[40%]">
-                        <p className="text-[12px] uppercase bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent font-bold mb-3">
-                            {data.questionSubHeading}
-                        </p>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+                        <Title name={data.questionSubHeading} />
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-accent mb-6 leading-tight">
                             {data.questionHeading}
                         </h2>
                     </div>
@@ -148,7 +138,7 @@ export default function ServicesPage() {
                                     <motion.div initial={{ opacity: 0, y: 10 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ delay: i * 0.1 }}
-                                        className={`flex flex-col gap-2 text-[16px] text-gray-400 ${indexes === item.title ? "flex" : "hidden"}`}>
+                                        className={`flex flex-col gap-2 text-[16px] text-secondary ${indexes === item.title ? "flex" : "hidden"}`}>
                                         {item.desc}
                                     </motion.div>
                                 </div>
@@ -157,7 +147,7 @@ export default function ServicesPage() {
                     </div>
                 </section>
             </div>
-            <div className="border-b border-gray-700">
+            <div className="border-b border-secondary">
                 <ClientSection />
             </div>
         </div>

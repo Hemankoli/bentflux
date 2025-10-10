@@ -42,7 +42,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0D0D0D] text-white">
+    <div className="min-h-screen flex flex-col text-primary border-b border-secondary">
       <main className="flex-grow px-6 md:px-20 py-16">
         <div className="max-w-3xl mx-auto space-y-12">
           {/* Header */}
@@ -50,7 +50,7 @@ export default function Contact() {
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
               Let’s talk.
             </h1>
-            <p className="text-gray-400 text-lg">
+            <p className="text-secondary text-lg">
               Ready to build something? Fill out the form, and we’ll get in
               touch within 24 hours.
             </p>
@@ -59,7 +59,7 @@ export default function Contact() {
           {/* Form Section */}
           <div className="grid grid-cols-1 gap-12">
             <form
-              className="space-y-6 bg-gray-800 rounded-lg p-10"
+              className="space-y-6 bg-secondaryBg rounded-lg p-10"
               onSubmit={handleSubmit}
             >
               <InputField
@@ -89,7 +89,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-300 mb-1"
+                  className="block text-sm font-medium text-secondary mb-1"
                 >
                   Message
                 </label>
@@ -99,14 +99,14 @@ export default function Contact() {
                   rows="5"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full bg-[#1A1A1A] border border-gray-800 rounded-lg px-4 py-3 focus:border-pink-500 focus:outline-none"
+                  className="w-full bg-[#1A1A1A] border border-primary  rounded-lg px-4 py-3 focus:border-secondary  focus:outline-none"
                   placeholder="Tell us what you're looking for..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="inline-block bg-pink-600 w-full hover:bg-pink-500 text-white font-medium px-6 py-3 rounded-lg transition-all"
+                className="inline-block bg-[#00b3ffff] w-full hover:bg-[#00b5] text-white font-medium px-6 py-3 rounded-lg transition-all"
               >
                 Send message
               </button>
@@ -115,18 +115,6 @@ export default function Contact() {
                 <p className="text-center text-sm text-gray-400 mt-3">{status}</p>
               )}
             </form>
-
-            {/* Contact Info */}
-            <div className="space-y-8 text-center">
-              <p className="text-gray-500 mt-2">
-                Betaflux Consulting Pvt Ltd
-                <br />
-                123, Some Road
-                <br />
-                Bangalore, KA 560001
-                <br />
-              </p>
-            </div>
           </div>
         </div>
       </main>
