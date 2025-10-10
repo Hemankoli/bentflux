@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function InputField({ labelName, type, name, value, placeholder }) {
+export default function InputField({ labelName, type, name, value, placeholder, method }) {
     return (
         <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+            <label className="block text-sm font-medium text-gray-300 mb-1">
                 {labelName}
             </label>
             <input
@@ -12,6 +12,7 @@ export default function InputField({ labelName, type, name, value, placeholder }
                 value={value}
                 className="w-full bg-[#1A1A1A] border border-gray-800 rounded-lg px-4 py-3 focus:border-blue-500 focus:outline-none"
                 placeholder={placeholder}
+                onChange={method}
             />
         </div>
     )

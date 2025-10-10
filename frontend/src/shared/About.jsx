@@ -9,22 +9,16 @@ export default function About() {
                     About Betaflux
                 </h3>
                 <div className="space-y-3 text-sm">
-                    <NavLink to={"/"} className="flex items-center gap-3 hover:text-white">
+                    <NavLink to={"/about/our-purpose"} className="flex items-center gap-3 hover:text-white">
                         Our Purpose
                     </NavLink>
-                    <NavLink to={"/"} className="flex items-center gap-3 hover:text-white">
+                    <NavLink to={"/about/our-story"} className="flex items-center gap-3 hover:text-white">
                         Our Story
                     </NavLink>
-                    <NavLink to={"/"} className="flex items-center gap-3 hover:text-white">
+                    <NavLink to={"/about/our-value"} className="flex items-center gap-3 hover:text-white">
                         Our Value
                     </NavLink>
-                    <NavLink to={"/"} className="flex items-center gap-3 hover:text-white">
-                        Community to Open Source
-                    </NavLink>
-                    <NavLink to={"/"} className="flex items-center gap-3 hover:text-white">
-                        Customer Service
-                    </NavLink>
-                    <NavLink to={"/"} className="flex items-center gap-3 hover:text-white">
+                    <NavLink to={"/contact-us"} className="flex items-center gap-3 hover:text-white">
                         Contact Us
                     </NavLink>
                 </div>

@@ -6,6 +6,7 @@ import CloudServices from "../shared/CloudServices";
 import { serviceData } from "../assets/serviceData";
 import { useParams } from "react-router-dom";
 import { IoIosArrowUp } from "react-icons/io";
+import ClientSection from "../components/ClientSection";
 
 export default function ServicesPage() {
     const { pathId } = useParams();
@@ -39,7 +40,7 @@ export default function ServicesPage() {
                         transition={{ duration: 0.7 }}
                         src={data.headingImage}
                         alt={data.headingImageAlt}
-                        className="rounded-xl shadow-lg"
+                        className="max-w-[300px] max-h-[400px] md:max-w-[500px] md:max-h-[600px]"
                     />
                 </section>
             </div>
@@ -53,6 +54,9 @@ export default function ServicesPage() {
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                             {data.workHeading}
                         </h2>
+                        <p className="text-gray-400 mb-8">
+                            {data.workParagraph}
+                        </p>
                         <motion.div
                             className="flex justify-center mt-12"
                             initial={{ opacity: 0 }}
@@ -78,8 +82,8 @@ export default function ServicesPage() {
             </div>
 
             <div className="border-b border-gray-700">
-                <section className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6 md:px-10 py-20">
-                    <div className="w-[80%]">
+                <section className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6 md:px-10 py-20">
+                    <div className="md:w-[80%]">
                         <p className="text-[12px] uppercase bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent font-bold mb-3">
                             {data.finalSubHeading}
                         </p>
@@ -89,12 +93,12 @@ export default function ServicesPage() {
                         <p className="text-gray-400 mb-8">
                             {data.finalParagraph}
                         </p>
-                        <img className="max-w-[350px] max-h-[600px]"
+                        <img className="max-w-[300px] max-h-[400px] md:max-w-[350px] md:max-h-[600px]"
                             src={data.finalImage}
                         />
                     </div>
                     <div className="space-y-10">
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid md:grid-cols-2 gap-4">
                             {data.finalSteps.map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -121,8 +125,8 @@ export default function ServicesPage() {
             </div>
 
             <div className="border-b border-gray-700">
-                <section className="flex items-start gap-20 max-w-6xl mx-auto px-6 md:px-10 py-20">
-                    <div className="w-[40%]">
+                <section className="flex items-start md:flex-row flex-col gap-20 max-w-6xl mx-auto px-6 md:px-10 py-20">
+                    <div className="md:-[40%]">
                         <p className="text-[12px] uppercase bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent font-bold mb-3">
                             {data.questionSubHeading}
                         </p>
@@ -130,7 +134,7 @@ export default function ServicesPage() {
                             {data.questionHeading}
                         </h2>
                     </div>
-                    <div className="w-[70%] space-y-6">
+                    <div className="md:w-[70%] space-y-6">
                         {data.questions.map((item, i) => (
                             <motion.div
                                 key={i}
@@ -150,9 +154,11 @@ export default function ServicesPage() {
                                 </div>
                             </motion.div>
                         ))}
-
                     </div>
                 </section>
+            </div>
+            <div className="border-b border-gray-700">
+                <ClientSection />
             </div>
         </div>
     );

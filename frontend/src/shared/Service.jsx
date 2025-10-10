@@ -6,7 +6,9 @@ import {
   FaClipboardList,
   FaServer,
 } from "react-icons/fa";
-import { NavLink, useParams } from 'react-router-dom';
+import { AiOutlineKubernetes } from "react-icons/ai";
+import { TbContrast2Filled } from "react-icons/tb";
+import { NavLink } from 'react-router-dom';
 
 export default function Service() {
 
@@ -26,11 +28,17 @@ export default function Service() {
                     <NavLink to={"/platforms-cloud-and-devops/iac-and-configuration-management"} className="flex items-center gap-3 hover:text-white">
                         <FaServer /> IaC and Configuration Management
                     </NavLink>
-                    <NavLink to={"/platforms-cloud-and-devops/ci-cd-and-gitops"} className="flex items-center gap-3 hover:text-white">
+                    <NavLink to={"/platforms-cloud-and-devops/kubernetes-consultation"} className="flex items-center gap-3 hover:text-white">
+                        <AiOutlineKubernetes /> 360° Kubernetes Consultation
+                    </NavLink>
+                    <NavLink to={"/platforms-cloud-and-devops/devsecops-and-compliance"} className="flex items-center gap-3 hover:text-white">
                         <FaUserShield /> DevSecOps & Compliance
                     </NavLink>
+                    <NavLink to={"/platforms-cloud-and-devops/multi-cloud-strategy-and-migration"} className="flex items-center gap-3 hover:text-white">
+                        <FaClipboardList /> Multi-Cloud Strategy and Migration
+                    </NavLink>
                     <NavLink to={"/platforms-cloud-and-devops/ci-cd-and-gitops"} className="flex items-center gap-3 hover:text-white">
-                        <FaClipboardList /> SRE and Managed SRE Service
+                        <TbContrast2Filled /> Disaster Recovery and Continuity Plan
                     </NavLink>
                 </div>
             </div>

@@ -1,5 +1,8 @@
 import React from "react";
-import { FaInstagram, FaLinkedin, FaDribbble } from "react-icons/fa";
+import { AiOutlineKubernetes } from "react-icons/ai";
+import { FaInstagram, FaLinkedin, FaDribbble, FaCloud, FaCubes, FaServer, FaUserShield, FaClipboardList } from "react-icons/fa";
+import { TbContrast2Filled } from "react-icons/tb";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -24,31 +27,48 @@ export default function Footer() {
         </div>
         <div>
           <h3 className="text-[12px] font-semibold text-gray-500 mb-4">COMPANY</h3>
-          <ul className="space-y-2">
-            <li className="text-[14px] hover:text-white cursor-pointer">About Betaflux</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">Our Story</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">Our Values</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">Careers</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">Customer Stories</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">Blog</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">Contact Us</li>
-          </ul>
+          <div className="space-y-3 text-sm">
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/about/our-purpose"} className="flex items-center gap-3 hover:text-white">
+              Our Purpose
+            </NavLink>
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/about/our-story"} className="flex items-center gap-3 hover:text-white">
+              Our Story
+            </NavLink>
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/about/our-value"} className="flex items-center gap-3 hover:text-white">
+              Our Value
+            </NavLink>
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/contact-us"} className="flex items-center gap-3 hover:text-white">
+              Contact Us
+            </NavLink>
+          </div>
         </div>
         <div>
           <h3 className="text-[12px] font-semibold text-gray-500 mb-4">
             PLATFORMS, CLOUD & DEVOPS
           </h3>
-          <ul className="space-y-2">
-            <li className="text-[14px] hover:text-white cursor-pointer">DevOps Assessment And Strategy</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">CI, CD And GitOps Consultation</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">IaC and Configuration Management</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">360° Kubernetes Consultation</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">DevSecOps And Compliance</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">SRE and Managed SRE Services</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">Multi-Cloud Strategy And Migration</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">Disaster Recovery And Continuity Planning</li>
-            <li className="text-[14px] hover:text-white cursor-pointer">DevOps And DevSecOps Training</li>
-          </ul>
+          <div className="space-y-3 text-sm">
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/platforms-cloud-and-devops/devops-assessment-and-cloud-strategy"} className="flex items-center gap-3 hover:text-white">
+              <FaCloud /> DevOps Assessment & Cloud Strategy
+            </NavLink>
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/platforms-cloud-and-devops/ci-cd-and-gitops"} className="flex items-center gap-3 hover:text-white">
+              <FaCubes /> CI, CD and GitOps Consultation
+            </NavLink>
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/platforms-cloud-and-devops/iac-and-configuration-management"} className="flex items-center gap-3 hover:text-white">
+              <FaServer /> IaC and Configuration Management
+            </NavLink>
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/platforms-cloud-and-devops/kubernetes-consultation"} className="flex items-center gap-3 hover:text-white">
+              <AiOutlineKubernetes /> 360° Kubernetes Consultation
+            </NavLink>
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/platforms-cloud-and-devops/devsecops-and-compliance"} className="flex items-center gap-3 hover:text-white">
+              <FaUserShield /> DevSecOps & Compliance
+            </NavLink>
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/platforms-cloud-and-devops/multi-cloud-strategy-and-migration"} className="flex items-center gap-3 hover:text-white">
+              <FaClipboardList /> Multi-Cloud Strategy and Migration
+            </NavLink>
+            <NavLink onClick={() => window.screenTop({ top: 0, behavior: 'smooth' })} to={"/platforms-cloud-and-devops/ci-cd-and-gitops"} className="flex items-center gap-3 hover:text-white">
+              <TbContrast2Filled /> Disaster Recovery and Continuity Plan
+            </NavLink>
+          </div>
         </div>
         <div>
           <h3 className="text-[12px] font-semibold text-gray-500 mb-2">
@@ -74,8 +94,8 @@ export default function Footer() {
       <div className="mt-16 border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between text-sm text-gray-500">
         <p>©2023 Betaflux Consulting Pvt Ltd</p>
         <div className="flex space-x-6 mt-4 md:mt-0">
-          <a href="#" className="hover:text-white">Terms of Service</a>
-          <a href="#" className="hover:text-white">Privacy Policy</a>
+          <p className="hover:text-white">Terms of Service</p>
+          <p className="hover:text-white">Privacy Policy</p>
         </div>
       </div>
     </footer>
