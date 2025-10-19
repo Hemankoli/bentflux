@@ -76,7 +76,7 @@ function generateEmailTemplate({ name, message }) {
         <a href="https://yourwebsite.com/dashboard" class="button">Go to Dashboard</a>
       </div>
       <div class="footer">
-        <p>© ${new Date().getFullYear()} MyApp. All rights reserved.</p>
+        <p>© ${new Date().getFullYear()} ANBSTACK. All rights reserved.</p>
       </div>
     </div>
   </body>
